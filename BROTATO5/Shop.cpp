@@ -3,12 +3,8 @@
 
 HRESULT Shop::init(int nowround, int luck, HFONT font)
 {
-	//
-	testbool = true;
-
 	shopFont = font;
 	_select = 20;
-	//RND->getInt();
 	for (int i = 1; i < 5; i++)
 	{
 		Button tmpButton;
@@ -64,12 +60,7 @@ void Shop::loadItemTable()
 				break;
 			}
 			}
-			if (testbool)
-			{
-				cout << tmpdir << endl;
-			}
 		}
-		testbool = false;
 	}
 }
 
@@ -86,17 +77,9 @@ void Shop::update()
 		}
 	}
 	_pGold = to_string(_playerGold);
-	//for (auto it = vICard.begin(); it != vICard.end();it++)
-	//{
-	//	if (!(*it)->getSoldOut())
-	//	{
-	//		(*it)->update();
-	//	}
-	//}
 }
 
 
-//여기 수정하기#########@@@@@@@@@@@@@####################### 할일
 int Shop::buyItem()
 {
 	for (int i = 0; i < 4; i++)
@@ -116,13 +99,6 @@ int Shop::buyItem()
 	return 0;
 }
 
-//struct tagITable
-//{
-//	int iNum;
-//	int iGrade;
-//	int iPrice;
-//	string iKey;
-//};
 void Shop::render(HDC hdc)
 {
 	for (int i = 0; i < 4; i++)
@@ -139,15 +115,14 @@ void Shop::render(HDC hdc)
 			{
 				SetTextColor(hdc, RGB(0, 0, 0));
 			}
-			TextOut(hdc, 160+360*i,660,priceStr[i].c_str(),strlen(priceStr[i].c_str()));
+			TextOut(hdc, 155+360*i,650,priceStr[i].c_str(),strlen(priceStr[i].c_str()));
 		}
 	}
 
 	SetTextColor(hdc, RGB(255, 255, 255));
 	oldFont = (HFONT)SelectObject(hdc, shopFont);
-	DrawText(hdc, _pGold.c_str(), strlen(_pGold.c_str()), &(RectMake(1200, 50, 200, 50)), DT_RIGHT);
+	TextOut(hdc, 760, 42, _pGold.c_str(), strlen(_pGold.c_str()));
 	SelectObject(hdc, oldFont);
-	//TextOut(hdc, 1300, 50, _pGold.c_str(), strlen(_pGold.c_str()));
 }
 
 void Shop::reRoll()
@@ -159,6 +134,7 @@ void Shop::reRoll()
 		int tmpDice2 = RND->getInt(5) + 1;
 		itemCard* tmpICard = new itemCard;
 		tagITable tmpITable;
+		//행운 스탯 적용 시 
 		//if (tmpDice < 1 + _nowRound / 2 + (_pLuck) / 10)
 		//{
 		//}
@@ -187,7 +163,3 @@ tagITable Shop::getItemInfo(int sNum)
 {
 	return { vICard[sNum]->getINum(),vICard[sNum]->getIGrade(),vICard[sNum]->getItemPrice(),vICard[sNum]->getIKey()};
 }
-//int iNum;
-//int iGrade;
-//int iPrice;
-//string iKey;

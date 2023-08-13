@@ -200,12 +200,14 @@ void RunScene::update()
 					player->setPStats(vSCard[lvUpSelectNum-1]->getStatType()-1, vSCard[lvUpSelectNum - 1]->getStatUp());
 					player->applyStat();
 					lvUpSelectNum = 0;
+					SOUNDMANAGER->playSound("onButton", 0.8);
 					vSCardReRoll();
 					break;
 				}			
 				case 5:
 				{
 					player->setGold(player->getGold() - lvRerollFee);
+					SOUNDMANAGER->playSound("onButton", 0.8);
 					vSCardReRoll();
 					statRerollCount++;
 					lvUpSelectNum = 0;
@@ -236,6 +238,7 @@ void RunScene::update()
 					{
 						if (pWeaponIndex <= pMaxWeapon)
 						{
+						SOUNDMANAGER->playSound("onButton", 0.8);
 						player->setGold(_shop.getPGold());
 						tagITable tmpItemInfo = _shop.getItemInfo(tmpSNum-1);
 						//
@@ -534,6 +537,7 @@ void RunScene::imageLoad()
 	IMAGEMANAGER->addImage("스탯2", "Resources/stats/stat_grade2.bmp", 363, 267, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addImage("스탯3", "Resources/stats/stat_grade3.bmp", 363, 267, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addImage("스탯4", "Resources/stats/stat_grade4.bmp", 363, 267, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addImage("코인", "Resources/button/coin.bmp", 47,48, true, RGB(255, 0, 255));
 
 	IMAGEMANAGER->addFrameImage("히트", "Resources/hitEffect/hitFrame.bmp", 570, 219, 3, 1, true, RGB(255, 0, 255));
 	//IMAGEMANAGER->addImage("드롭스3", "Resources/bg/UI.bmp", 40, 40, true, RGB(255, 0, 255));
@@ -609,7 +613,6 @@ void RunScene::cameraUpdate()
 
 void RunScene::render()
 {
-	//cout << tmpGun->getPVBullets().size() << endl;
 	SetBkMode(getMemDC(), TRANSPARENT);
 	if (_openShop)
 	{
@@ -624,16 +627,10 @@ void RunScene::render()
 		{
 			(*iter)->render(getMemDC());
 		}
-		//
-		//cout << tempEnemy->getDropsVector().size() << endl;
 		for (int i = 0; i < vDrops.size();++i)
 		{
 			vDrops.at(i).render(getMemDC());
 		}
-		//for (auto vIt = tmpGun->getPVBullets().begin(); vIt != tmpGun->getPVBullets().end(); vIt++)
-		//{
-		//	vIt->render(getMemDC());
-		//}
 		for (int i = 0; i < pVBullets.size(); ++i)
 		{
 			pVBullets.at(i).render(getMemDC());
@@ -643,19 +640,8 @@ void RunScene::render()
 		//데미지 표시
 		dpDamage(getMemDC(), RGB(255,255,0), mediumFont);
 
-		//테스트
-		//DrawRectMake(getMemDC(),RectMakeCenter(player->getX()-renderPt.x+WINSIZE_X/2,player->getY()-renderPt.y+WINSIZE_Y/2, 60, 60));
-
 		dpTime(getMemDC());
 		dpInterface(getMemDC(), 34, 34);
-
-		//테스트
-		if (_testMode)
-		{
-			//DrawRectMake(getMemDC(), RectMake(player->getRX(), player->getRY(), 60, 60));
-			//DrawRectMake(getMemDC(), RectMake(player->getX() - renderPt.x + WINSIZE_X / 2, player->getY() - renderPt.y + WINSIZE_Y / 2, 60, 60));
-			//WInven->render(getMemDC());
-		}
 	}
 	//테스트
 	if (_testMode)
@@ -671,7 +657,6 @@ void RunScene::render()
 			(*vCIt)->render(getMemDC());
 		}
 		dpStat->render(getMemDC(), 1500, 150);
-
 	}
 
 	if (_levelUp)
@@ -718,7 +703,7 @@ void RunScene::playerDie()
 	_bTimeCount--;
 	if (_bTimeCount <= 0)
 	{
-		//인벤토리, 달리기 결과 표시, 타이틀 돌아가기 버튼
+		//인벤토리, 달리기 결과 표시, 타이틀 돌아가기
 	}
 }
 
@@ -757,19 +742,6 @@ int RunScene::findEnemy()
 
 void RunScene::aimTarget(int ENum)
 {
-	/*for (int i = 1; i < 7; i++)
-	{
-		if (player->getSNum(i) == 0) continue;
-		if (minD < player->getWRange(i))
-		{
-			player->setAngle(i, findTarget(player->getWX(i), player->getWY(i), eX, eY, minD));
-		}
-		else
-		{
-			player->setWIdle(i, true);
-		}
-	}*/
-
 	for (int i = 0; i < player->getWIndex(); i++)
 	{
 		//적이없으면 나가기
@@ -849,15 +821,9 @@ void RunScene::dpInterface(HDC hdc, int destX, int destY)
 		SelectObject(hdc, greenBrush);
 		RectangleMake(hdc, 6 + destX, 59 + destY, (int)(expRatio * barWidth), barHeight);
 	}
-	// hp 표시
-	//SetTextColor(hdc, RGB(0, 0, 0));
-	//dpText(hdc, 155, 36, tempStr1, mediumOutFont);
 
 	SetTextColor(hdc, RGB(255, 255, 255));
 	dpText(hdc, 153, 34, tempStr1, mediumFont);
-	// 레벨 표시
-	//SetTextColor(hdc, RGB(0, 0, 0));
-	//dpText(hdc, 260, 88, tempStr2, mediumOutFont);
 
 	dpText(hdc, 266, 88, tempStr2, mediumFont);
 	dpText(hdc, 100, 126, tempStr3, TimerFont);
@@ -874,7 +840,17 @@ void RunScene::dpShopInterface()
 	for (auto it = vShopButton.begin(); it != vShopButton.end(); ++it)
 	{
 		it->render(getMemDC());
+		if (it->getOnMouse())
+		{
+			SetTextColor(getMemDC(), RGB(0, 0, 0));
+		}
+		else
+		{
+			SetTextColor(getMemDC(), RGB(255, 255, 255));
+		}
+		dpText(getMemDC(), WINSIZE_X - 340, WINSIZE_Y - 137, "다음 라운드", LargeFont);
 	}
+	IMAGEMANAGER->render("코인", getMemDC(), 700, 50);
 	WInven->render(getMemDC());
 }
 
@@ -885,7 +861,6 @@ HFONT RunScene::setFont(int fSize, int fWeight, char* fontName)
 
 void RunScene::dpText(HDC hdc, int destX, int destY, char* str, HFONT font)
 {
-	//char* tempStr = str;
 	SetBkMode(hdc, TRANSPARENT);
 	SelectObject(hdc, font);
 	TextOut(hdc, destX, destY, str, strlen(str));
@@ -893,8 +868,6 @@ void RunScene::dpText(HDC hdc, int destX, int destY, char* str, HFONT font)
 
 void RunScene::dpDamage(HDC hdc, COLORREF rgb, HFONT font)
 {
-	//데미지 표시하기
-	//cout << vDRender.size() << endl;
 	SetTextColor(hdc, rgb);
 	SelectObject(hdc, font);
 	for (auto dRIt = vDRender.begin(); dRIt != vDRender.end(); dRIt++)

@@ -74,10 +74,8 @@ protected:
 	HBRUSH greenBrush;
 
 	HFONT TimerFont;
-	//HFONT TimerOutFont;
 	HFONT LargeFont;
 	HFONT mediumFont;
-	//HFONT mediumOutFont;
 	HFONT smallFont;
 	bool _testMode;
 
@@ -86,7 +84,6 @@ public:
 	void update();
 	void setNewRound();
 
-	//void loopBGM();
 	void vSCardReRoll();
 	void statDataLoad();
 	void imageLoad();

@@ -4,9 +4,6 @@
 
 void Button::setButton(int x, int y, int width, int height, string key1, string key2, char* dir1, char* dir2, int sNum)
 {
-	//cout << key1 << endl;
-	//cout << dir1 << endl;
-
 	IMAGEMANAGER->addImage(key1, dir1, width, height, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addImage(key2, dir2, width, height, true, RGB(255, 0, 255));
 	_bArea = RectMake(x,y,width,height);
@@ -40,7 +37,6 @@ void Button::render(HDC hdc)
 
 void Button::update(POINT mPt)
 {
-	//버튼 사운드 출력 마저 처리하기!!
 	if (_active)
 	{
 		if (PtInRect(&_bArea, mPt))

@@ -14,8 +14,7 @@ struct tagITable
 class Shop
 {
 private:
-	bool testbool;
-
+	//등급별 아이템 테이블 맵
 	map<int,tagITable> normalItems;
 	map<int,tagITable> uncommonItems;
 	map<int,tagITable> rareItems;

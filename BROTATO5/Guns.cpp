@@ -4,7 +4,6 @@
 HRESULT Guns::init(int sNum, int pX, int pY, int grade)
 {
 	Weapon::init(sNum, pX, pY, grade);
-	//IMAGEMANAGER->addImage("ÀÏ¹ÝÃÑ¾Ë", "Resources/bullet/bullet1.bmp", 50, 50, true, RGB(255, 0, 255));
 	return S_OK;
 }
 
@@ -67,12 +66,6 @@ int Guns::hitCheck(HDC hdc, int ex, int ey)
 				pVBullets.at(i).setBPenet(pVBullets.at(i).getBPenet() - 1);
 				tmpDmg = pVBullets.at(i).getBDmg();
 				totalDmg += tmpDmg;
-
-				//string tmp = to_string(tmpDmg);
-				//char tmpStr[20];
-				//strcpy_s(tmpStr, 20, tmp.c_str());
-				////SelectObject(hdc, );
-				//TextOut(hdc, ex + RND->getInt(20), ey + RND->getInt(20), tmpStr, strlen(tmpStr));
 			}
 		}
 	}
@@ -101,13 +94,10 @@ void ShotGun::setItem()
 {
 	
 	bulletSpd = 50;
-	//IMAGEMANAGER->addImage("¼¦°Ç", "Resources/weapon/Gun/60px-Double_Barrel_Shotgun.bmp", 120, 60, true, RGB(255, 0, 255));
 	switch (grade)
 	{
 	case 1:
 	{
-		//IMAGEMANAGER->addImage("1¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/ShotGun1Icon.bmp", 96, 96, true, RGB(255, 0, 255));
-		//IMAGEMANAGER->addImage("1¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/ShotGun1_info.bmp", 351, 478, true, RGB(255, 0, 255));
 		maxBullet = 4;
 		damage = 3;
 		attackDelay = 137;
@@ -118,9 +108,6 @@ void ShotGun::setItem()
 
 	case 2:
 	{
-		//IMAGEMANAGER->addImage("2¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/.bmp", 0, 0);
-		//IMAGEMANAGER->addImage("2¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/.bmp", );
-
 		maxBullet = 4;
 		damage = 6;
 		attackDelay = 128;
@@ -130,9 +117,6 @@ void ShotGun::setItem()
 	}
 	case 3:
 	{
-		//IMAGEMANAGER->addImage("3¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/.bmp", 0, 0);
-		//IMAGEMANAGER->addImage("3¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/.bmp", );
-
 		maxBullet = 4;
 		damage = 9;
 		attackDelay = 120;
@@ -142,9 +126,6 @@ void ShotGun::setItem()
 	}
 	case 4:
 	{
-		//IMAGEMANAGER->addImage("4¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/.bmp", 0, 0);
-		//IMAGEMANAGER->addImage("4¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/.bmp", );
-
 		maxBullet = 6;
 		damage = 12;
 		attackDelay = 112;
@@ -152,66 +133,31 @@ void ShotGun::setItem()
 		_penet = 3;
 		break;
 	}
-	//}
-	//}
-	//case 2:
-	//{
-	//	IMAGEMANAGER->addImage("·¹ÀÌÀú°Ç", "Resources/weapon/Gun/60px-Laser_Gun.bmp", 120, 60);
-	//}
-	//case 3:
-	//{
-	//	IMAGEMANAGER->addImage("¸ÞµðÄÃ°Ç", "Resources/weapon/Gun/60px-Medical_Gun.bmp", 120, 60);
-	//}
-	//case 4:
-	//{
-	//	IMAGEMANAGER->addImage("±ÇÃÑ", "Resources/weapon/Gun/60px-Pistol.bmp", 120, 60);
-	//}
-	//case 5:
-	//{
-	//	IMAGEMANAGER->addImage("½´·¹´õ", "Resources/weapon/Gun/60px-Shredder.bmp", 120, 60);
-	//}
-	//case 6:
-	//{
-	//	IMAGEMANAGER->addImage("±â°ü´ÜÃÑ", "Resources/weapon/Gun/60px-SMG.bmp", 120, 60);
-	//}
-	//}
 	}
 }
 
 void ShotGun::render(HDC hdc)
 {
 	Guns::render(hdc);
-	//cout << _angle << endl;
-	//cout << isIdle << endl;
 	if (isLeft)
 	{
-		//IMAGEMANAGER->render("¼¦°Ç", hdc, x, y, 0, 0, 60, 60);
 		lRenderer->Render(hdc, x, y, _angle+180.0f);
 	}
 	else
 	{
-		//IMAGEMANAGER->render("¼¦°Ç", hdc, x, y, 60, 0, 60, 60);
 		rRenderer->Render(hdc, x, y, _angle);
 	}
-	/*for (auto it = wVBullets.begin(); it != wVBullets.end(); ++it)
-	{
-		(*it)->render(hdc);
-	}*/
 }
 
 void ShotGun::update(int pX, int pY, bool pLeft)
 {
 	Weapon::update(pX, pY, pLeft);
-	/*for (auto it = wVBullets.begin(); it != wVBullets.end(); ++it)
-	{
-		(*it)->update();
-	}*/
 }
 
 void ShotGun::attack()
 {
 	Guns::attack();
-	SOUNDMANAGER->playSound("Resources/weapon/Gun/double_barrel_shotgun.wav", 0.8);
+	SOUNDMANAGER->playSound("Resources/weapon/Gun/double_barrel_shotgun.wav", 1.0);
 	for (int i = 0; i < maxBullet; i++)
 	{
 		Bullet tmpBullet;
@@ -246,8 +192,6 @@ void LaserGun::setItem()
 	{
 	case 1:
 	{
-		//IMAGEMANAGER->addImage("1·¹ÀÌÀú°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/ShotGun1Icon.bmp", 96, 96, true, RGB(255, 0, 255));
-		//IMAGEMANAGER->addImage("1·¹ÀÌÀú°ÇÁ¤º¸", "Resources/weapon/Gun/ShotGun1_info.bmp", 351, 478, true, RGB(255, 0, 255));
 		damage = 30;
 		attackDelay = 223;
 		_range = 500;
@@ -257,9 +201,6 @@ void LaserGun::setItem()
 
 	case 2:
 	{
-		//IMAGEMANAGER->addImage("2¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/.bmp", 0, 0);
-		//IMAGEMANAGER->addImage("2¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/.bmp", );
-
 		damage = 45;
 		attackDelay = 215;
 		_range = 500;
@@ -268,9 +209,6 @@ void LaserGun::setItem()
 	}
 	case 3:
 	{
-		//IMAGEMANAGER->addImage("3¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/.bmp", 0, 0);
-		//IMAGEMANAGER->addImage("3¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/.bmp", );
-
 		damage = 60;
 		attackDelay = 207;
 		_range = 500;
@@ -279,9 +217,6 @@ void LaserGun::setItem()
 	}
 	case 4:
 	{
-		//IMAGEMANAGER->addImage("4¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/.bmp", 0, 0);
-		//IMAGEMANAGER->addImage("4¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/.bmp", );
-
 		damage = 90;
 		attackDelay = 190;
 		_range = 500;
@@ -295,23 +230,14 @@ void LaserGun::setItem()
 void LaserGun::render(HDC hdc)
 {
 	Guns::render(hdc);
-	//cout << _angle << endl;
-	//cout << isIdle << endl;
 	if (isLeft)
 	{
-		//IMAGEMANAGER->render("¼¦°Ç", hdc, x, y, 0, 0, 60, 60);
 		lRenderer->Render(hdc, x, y, _angle + 180.0f);
 	}
 	else
 	{
-		//IMAGEMANAGER->render("¼¦°Ç", hdc, x, y, 60, 0, 60, 60);
 		rRenderer->Render(hdc, x, y, _angle);
 	}
-	/*for (auto it = wVBullets.begin(); it != wVBullets.end(); ++it)
-	{
-		(*it)->render(hdc);
-	}*/
-
 }
 
 void LaserGun::update(int pX, int pY, bool pLeft)
@@ -353,8 +279,6 @@ void MedicalGuns::setItem()
 	{
 	case 1:
 	{
-		//IMAGEMANAGER->addImage("1·¹ÀÌÀú°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/ShotGun1Icon.bmp", 96, 96, true, RGB(255, 0, 255));
-		//IMAGEMANAGER->addImage("1·¹ÀÌÀú°ÇÁ¤º¸", "Resources/weapon/Gun/ShotGun1_info.bmp", 351, 478, true, RGB(255, 0, 255));
 		damage = 10;
 		attackDelay = 95;
 		_range = 400;
@@ -365,9 +289,6 @@ void MedicalGuns::setItem()
 
 	case 2:
 	{
-		//IMAGEMANAGER->addImage("2¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/.bmp", 0, 0);
-		//IMAGEMANAGER->addImage("2¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/.bmp", );
-
 		damage = 15;
 		attackDelay = 87;
 		_range = 400;
@@ -377,9 +298,6 @@ void MedicalGuns::setItem()
 	}
 	case 3:
 	{
-		//IMAGEMANAGER->addImage("3¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/.bmp", 0, 0);
-		//IMAGEMANAGER->addImage("3¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/.bmp", );
-
 		damage = 20;
 		attackDelay = 78;
 		_range = 400;
@@ -389,9 +307,6 @@ void MedicalGuns::setItem()
 	}
 	case 4:
 	{
-		//IMAGEMANAGER->addImage("4¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/.bmp", 0, 0);
-		//IMAGEMANAGER->addImage("4¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/.bmp", );
-
 		damage = 30;
 		attackDelay = 62;
 		_range = 400;
@@ -400,7 +315,6 @@ void MedicalGuns::setItem()
 		break;
 	}
 	}
-
 }
 
 void MedicalGuns::render(HDC hdc)
@@ -453,8 +367,6 @@ void SubMachineGun::setItem()
 	{
 	case 1:
 	{
-		//IMAGEMANAGER->addImage("1SMG¾ÆÀÌÄÜ", "Resources/weapon/Gun/SubMachineGun1Icon.bmp", 96, 96, true, RGB(255, 0, 255));
-		//IMAGEMANAGER->addImage("1SMGÁ¤º¸", "Resources/weapon/Gun/SubMachineGun1_info.bmp", 351, 478, true, RGB(255, 0, 255));
 		damage = 3;
 		attackDelay = 17;
 		_range = 400;
@@ -464,9 +376,6 @@ void SubMachineGun::setItem()
 
 	case 2:
 	{
-		//IMAGEMANAGER->addImage("2¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/.bmp", 0, 0);
-		//IMAGEMANAGER->addImage("2¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/.bmp", );
-
 		damage = 4;
 		attackDelay = 17;
 		_range = 400;
@@ -475,9 +384,6 @@ void SubMachineGun::setItem()
 	}
 	case 3:
 	{
-		//IMAGEMANAGER->addImage("3¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/.bmp", 0, 0);
-		//IMAGEMANAGER->addImage("3¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/.bmp", );
-
 		damage = 5;
 		attackDelay = 17;
 		_range = 400;
@@ -486,9 +392,6 @@ void SubMachineGun::setItem()
 	}
 	case 4:
 	{
-		//IMAGEMANAGER->addImage("4¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/.bmp", 0, 0);
-		//IMAGEMANAGER->addImage("4¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/.bmp", );
-
 		damage = 8;
 		attackDelay = 15;
 		_range = 400;
@@ -502,8 +405,6 @@ void SubMachineGun::setItem()
 void SubMachineGun::render(HDC hdc)
 {
 	Guns::render(hdc);
-	//cout << _angle << endl;
-	//cout << isIdle << endl;
 	if (isLeft)
 	{
 		lRenderer->Render(hdc, x, y, _angle + 180.0f);
@@ -521,9 +422,6 @@ void SubMachineGun::update(int pX, int pY, bool pLeft)
 
 void SubMachineGun::attack()
 {
-	//Å×½ºÆ®
-	//cout << "SubMachineGun Attack" << endl;
-
 	Guns::attack();
 	SOUNDMANAGER->playSound("SMG", 0.8);
 	Bullet tmpBullet;
@@ -555,8 +453,6 @@ void PistolGuns::setItem()
 	{
 	case 1:
 	{
-		//IMAGEMANAGER->addImage("1SMG¾ÆÀÌÄÜ", "Resources/weapon/Gun/SubMachineGun1Icon.bmp", 96, 96, true, RGB(255, 0, 255));
-		//IMAGEMANAGER->addImage("1SMGÁ¤º¸", "Resources/weapon/Gun/SubMachineGun1_info.bmp", 351, 478, true, RGB(255, 0, 255));
 		damage = 12;
 		attackDelay = 120;
 		_range = 400;
@@ -566,9 +462,6 @@ void PistolGuns::setItem()
 
 	case 2:
 	{
-		//IMAGEMANAGER->addImage("2¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/.bmp", 0, 0);
-		//IMAGEMANAGER->addImage("2¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/.bmp", );
-
 		damage = 24;
 		attackDelay = 112;
 		_range = 400;
@@ -577,9 +470,6 @@ void PistolGuns::setItem()
 	}
 	case 3:
 	{
-		//IMAGEMANAGER->addImage("3¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/.bmp", 0, 0);
-		//IMAGEMANAGER->addImage("3¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/.bmp", );
-
 		damage = 36;
 		attackDelay = 103;
 		_range = 400;
@@ -588,9 +478,6 @@ void PistolGuns::setItem()
 	}
 	case 4:
 	{
-		//IMAGEMANAGER->addImage("4¼¦°Ç¾ÆÀÌÄÜ", "Resources/weapon/Gun/.bmp", 0, 0);
-		//IMAGEMANAGER->addImage("4¼¦°ÇÁ¤º¸", "Resources/weapon/Gun/.bmp", );
-
 		damage = 55;
 		attackDelay = 87;
 		_range = 400;
@@ -604,8 +491,6 @@ void PistolGuns::setItem()
 void PistolGuns::render(HDC hdc)
 {
 	Guns::render(hdc);
-	//cout << _angle << endl;
-	//cout << isIdle << endl;
 	if (isLeft)
 	{
 		lRenderer->Render(hdc, x, y, _angle + 180.0f);

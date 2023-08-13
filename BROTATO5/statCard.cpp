@@ -8,7 +8,6 @@ void statCard::init(int x, int y, int cNum, int grade, int statNum ,HFONT font)
 {
 
 	statFont = font;
-	//cNum 1,2,3,4;
 	_sName += L" ";
 	_sName += to_wstring(grade);
 

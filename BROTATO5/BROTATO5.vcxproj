@@ -179,12 +179,6 @@
     <ClCompile Include="KeyManager.cpp" />
     <ClCompile Include="maingame.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="RandomMake.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="rotateRender.cpp" />
     <ClCompile Include="RunScene.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -227,12 +221,6 @@
     <ClInclude Include="maingame.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="RandomFunction.h" />
-    <ClInclude Include="RandomMake.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="rotateRender.h" />
     <ClInclude Include="RunScene.h" />
     <ClInclude Include="Scene.h" />
