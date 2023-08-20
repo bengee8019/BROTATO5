@@ -24,7 +24,6 @@ protected:
 	Button sReRollButton;
 	//Å×½ºÆ®
 	vector<statCard*> vSCard;
-	//
 	Guns* tmpGun;
 	Enemy* tempEnemy;
 	Shop _shop;

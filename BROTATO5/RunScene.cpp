@@ -704,6 +704,7 @@ void RunScene::playerDie()
 	if (_bTimeCount <= 0)
 	{
 		//인벤토리, 달리기 결과 표시, 타이틀 돌아가기
+		//미구현
 	}
 }
 

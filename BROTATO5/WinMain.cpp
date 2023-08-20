@@ -53,7 +53,7 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance,
 	//메모리 단계 show 하기전에 셋팅
 	// 클라이언트 영역의 사이즈를 정확히 잡아주기 위해 
 	setWindowSize(WINSTART_X, WINSTART_Y, WINSIZE_X, WINSIZE_Y);
-
+	SetMenu(_hWnd, NULL);
 	ShowWindow(_hWnd, nCmdShow);
 
 	if (FAILED(_gm->init()))

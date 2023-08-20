@@ -28,6 +28,7 @@ void SoundManager::update(void)
 	System->update();
 }
 
+//키값, 사운드 맵에 페어 등록
 FMOD::Sound* SoundManager::addSound(string strKey, string dir, bool isloop)
 {
 	FMOD::Sound* snd = findSound(strKey);
@@ -74,19 +75,12 @@ void SoundManager::playSound(string strKey, float vol)
 	System->playSound(findSound(strKey), 0, false, &Channel);
 }
 
-//void SoundManager::setVolume(float vol,FMOD_CHANNEL)
-//{
-//	_sVolume = vol;
-//	FMOD_Channel_SetVolume(Channel, vol);
-//}
-
 bool SoundManager::deleteSound(string strKey)
 {
 	auto key = _mSoundList.find(strKey);
 
 	if (key != _mSoundList.end())
 	{
-		//빼주는 순서 중요하다!!!
 		key->second->release();
 		SAFE_DELETE(key->second);
 		_mSoundList.erase(key);

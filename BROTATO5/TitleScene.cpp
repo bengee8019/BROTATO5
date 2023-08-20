@@ -50,8 +50,8 @@ HRESULT TitleScene::init()
 
 	//SOUNDMANAGER->addWaveFileWithKey("onButton", "Resources/music/effectSound/button/onButton.wav");
 	
-	SOUNDMANAGER->addSound("title_converted", "Resources/music/bg/title_converted.mp3",true);
-	SOUNDMANAGER->playSound("title_converted", 0.4);
+	SOUNDMANAGER->addSound("Ingame_converted", "Resources/music/bg/Ingame_converted.mp3",true);
+	SOUNDMANAGER->playSound("Ingame_converted", 0.4);
 	//SOUNDMANAGER->addMp3FileWithKey("Ingame_converted", "Resources/music/bg/Ingame_converted.mp3");
 	//SOUNDMANAGER->playSoundWithKey("Ingame_converted");
 

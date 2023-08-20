@@ -113,11 +113,6 @@ void maingame::update()
 		}
 	}
 	_currentScene->update();
-
-
-	//if () _currentScene = _select;
-	//if (KEYMANAGER->isOnceKeyDown(VK_MBUTTON)) _currentScene = _start;
-
 }
 
 void maingame::render()
@@ -127,7 +122,10 @@ void maingame::render()
 
 void maingame::release()
 {
-	SAFE_DELETE(_title);
-	SAFE_DELETE(_select);
-	SAFE_DELETE(_run);
+	//_title->release();
+	//SAFE_DELETE(_title);
+	//_select->release();
+	//SAFE_DELETE(_select);
+	//_run->release();
+	//SAFE_DELETE(_run);
 }

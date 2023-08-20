@@ -1,6 +1,5 @@
 #pragma once
 #include "SingletonBase.h"
-//#include <fmod.h>
 #include "fmod.hpp"
 #pragma comment(lib, "fmod_vc.lib")
 
@@ -27,7 +26,6 @@ public:
 	FMOD::Sound* findSound(string strKey);
 	void playSound(string strKey, float vol);
 
-	//void setVolume(float vol);
 	bool deleteSound(string strKey);
 	bool deleteAll();
 

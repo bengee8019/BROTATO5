@@ -24,6 +24,7 @@ HRESULT GameNode::init(bool managerInit)
 		KEYMANAGER->init();
 		IMAGEMANAGER->init();
 		SOUNDMANAGER->init();
+
 		return S_OK;
 	}
 	return S_FALSE;

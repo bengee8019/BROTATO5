@@ -13,216 +13,253 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Core">
+      <UniqueIdentifier>{c9b4e08c-e807-4a23-9d1f-89e5868dc9bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Core\stdafx">
+      <UniqueIdentifier>{bcd460cc-f37a-4b9f-9bfe-7e585f828504}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Core\Manager">
+      <UniqueIdentifier>{d6badbb3-61ae-4468-b4e6-7c1cfedc9f98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Player">
+      <UniqueIdentifier>{abf01748-0453-4178-8b88-4a90fcf951ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Shop">
+      <UniqueIdentifier>{345ab7aa-68bd-4d85-80b6-de43041ebc42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene">
+      <UniqueIdentifier>{43c61d68-f4ed-4566-a4ad-cb089ef72ab5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Items">
+      <UniqueIdentifier>{739921d8-77b2-43e5-97a3-ce1bc478e5ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Enemy">
+      <UniqueIdentifier>{58b27b36-d4e3-49e3-9327-09ec85741474}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Drops">
+      <UniqueIdentifier>{ffee8359-6c02-49c6-b3c3-9861f6c16a99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Button">
+      <UniqueIdentifier>{7929b30d-0cd0-410e-837b-beecdd8166d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Bullet">
+      <UniqueIdentifier>{b5dbd0cf-3d48-43ba-bc45-289cb2bd0eaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Core\SingletonBase">
+      <UniqueIdentifier>{627133b1-71cc-49ba-8b1a-dc403a136100}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Renderer">
+      <UniqueIdentifier>{c026b4f9-176c-496f-aee5-cc6f7cdc9402}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Acc.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="AInventory.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Button.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="DamageRenderer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Drops.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="FontManager.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="GameNode.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="GImage.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Guns.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ImageManager.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="itemCard.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ItemManager.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Items.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyManager.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="maingame.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="Stdafx.cpp">
+      <Filter>소스 파일\Core\stdafx</Filter>
     </ClCompile>
-    <ClCompile Include="rotateRender.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="GameNode.cpp">
+      <Filter>소스 파일\Core</Filter>
     </ClCompile>
-    <ClCompile Include="RunScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="SelectScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Shop.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="statCard.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="AInventory.cpp">
+      <Filter>소스 파일\Player</Filter>
     </ClCompile>
     <ClCompile Include="statUI.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Player</Filter>
     </ClCompile>
-    <ClCompile Include="Stdafx.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="TempSoundManager.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Weapon.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="WinMain.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="statCard.cpp">
+      <Filter>소스 파일\Player</Filter>
     </ClCompile>
     <ClCompile Include="WInventory.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemManager.cpp">
+      <Filter>소스 파일\Core\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>소스 파일\Core\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyManager.cpp">
+      <Filter>소스 파일\Core\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="TempSoundManager.cpp">
+      <Filter>소스 파일\Core\Manager</Filter>
     </ClCompile>
     <ClCompile Include="SoundManager.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Core\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>소스 파일\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Guns.cpp">
+      <Filter>소스 파일\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="itemCard.cpp">
+      <Filter>소스 파일\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Items.cpp">
+      <Filter>소스 파일\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectScene.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="RunScene.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="FontManager.cpp">
+      <Filter>소스 파일\Core\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>소스 파일\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Acc.cpp">
+      <Filter>소스 파일\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Shop.cpp">
+      <Filter>소스 파일\Shop</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GImage.cpp">
+      <Filter>소스 파일\Core\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>소스 파일\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>소스 파일\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="Drops.cpp">
+      <Filter>소스 파일\Drops</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>소스 파일\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="rotateRender.cpp">
+      <Filter>소스 파일\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="DamageRenderer.cpp">
+      <Filter>소스 파일\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Acc.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="AInventory.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CommonMacroFunction.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="DamageRenderer.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Drops.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="FontManager.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
     <ClInclude Include="GameManager.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="GameNode.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="GImage.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Guns.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="ImageManager.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="itemCard.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemManager.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Items.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="KeyManager.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="maingame.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>소스 파일</Filter>
+    <ClInclude Include="Stdafx.h">
+      <Filter>소스 파일\Core\stdafx</Filter>
     </ClInclude>
-    <ClInclude Include="RandomFunction.h">
-      <Filter>소스 파일</Filter>
+    <ClInclude Include="GameNode.h">
+      <Filter>소스 파일\Core</Filter>
     </ClInclude>
-    <ClInclude Include="rotateRender.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="RunScene.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="SelectScene.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Shop.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="SingletonBase.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="statCard.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Stats.h">
-      <Filter>소스 파일</Filter>
+    <ClInclude Include="AInventory.h">
+      <Filter>소스 파일\Player</Filter>
     </ClInclude>
     <ClInclude Include="statUI.h">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Player</Filter>
     </ClInclude>
-    <ClInclude Include="Stdafx.h">
-      <Filter>소스 파일</Filter>
+    <ClInclude Include="Stats.h">
+      <Filter>소스 파일\Player</Filter>
     </ClInclude>
-    <ClInclude Include="TempSoundManager.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleScene.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Weapon.h">
-      <Filter>소스 파일</Filter>
+    <ClInclude Include="statCard.h">
+      <Filter>소스 파일\Player</Filter>
     </ClInclude>
     <ClInclude Include="WInventory.h">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonMacroFunction.h">
+      <Filter>소스 파일\Core\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemManager.h">
+      <Filter>소스 파일\Core\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageManager.h">
+      <Filter>소스 파일\Core\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyManager.h">
+      <Filter>소스 파일\Core\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="TempSoundManager.h">
+      <Filter>소스 파일\Core\Manager</Filter>
     </ClInclude>
     <ClInclude Include="SoundManager.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>소스 파일\Core\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>소스 파일\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Guns.h">
+      <Filter>소스 파일\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="itemCard.h">
+      <Filter>소스 파일\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Items.h">
+      <Filter>소스 파일\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>소스 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectScene.h">
+      <Filter>소스 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="RunScene.h">
+      <Filter>소스 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="FontManager.h">
+      <Filter>소스 파일\Core\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomFunction.h">
+      <Filter>소스 파일\Core\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Acc.h">
+      <Filter>소스 파일\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>소스 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Shop.h">
+      <Filter>소스 파일\Shop</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>소스 파일\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GImage.h">
+      <Filter>소스 파일\Core\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>소스 파일\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>소스 파일\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="Drops.h">
+      <Filter>소스 파일\Drops</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>소스 파일\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="SingletonBase.h">
+      <Filter>소스 파일\Core\SingletonBase</Filter>
+    </ClInclude>
+    <ClInclude Include="rotateRender.h">
+      <Filter>소스 파일\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DamageRenderer.h">
+      <Filter>소스 파일\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

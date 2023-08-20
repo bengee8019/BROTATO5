@@ -1,7 +1,3 @@
-// header.h: 표준 시스템 포함 파일
-// 또는 프로젝트 특정 포함 파일이 들어 있는 포함 파일입니다.
-//
-
 #pragma once
 // 경고 무시
 #pragma warning(disable : 4005) // 
@@ -17,8 +13,6 @@
 
  - 개발에 초기 구축 단계에서는 별 필요성을 못 느끼지만 헤더파일의 크기가 커지거나 양이
    많아질수록 활용도 및 효율이 급상승한다. ↑
-
-
 */
 
 //SDKDDKVER.h 는 프로그램에서 지원할 os에 따라 
@@ -93,19 +87,17 @@
 #include <string>
 //unordered_map: Hash 자료구조
 // ㄴ 일반적 상황에서 map 보다 검색속도가 더 빠르다
-// ㄴ 검색 속도가 빠른 이유는 중복된 데이터를 허용하지 않기 때문
 // ㄴ 단, 유사 데이터가 많을시(key), 해시 충돌이 발생할 여지가 생기기 때문에 성능 저하가 발생
 #include <unordered_map>
 // cassert: C++ 프로그래머의 희망 -> 잘 쓰면.. killing process 
 #include <cassert> //컴파일 예 아니요 /남발x
 //bitset: 비트 연산을 좀 더 쉽게 관리해 주는 함수를 지원하는 STL
 //reset,set,flip,all,any,size 등등..
-#include <bitset> //STL //bool 시리즈모음
+#include <bitset> 
 #include <windef.h>
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-//using std::vector; << 이렇게 쪼개서 써라 
 using namespace std;
 
 //GDI+
@@ -130,12 +122,6 @@ using namespace std;
 //ID2D1Factory*			_ID2DFactory=nullptr;
 //ID2D1HwndRenderTarget*	_ID2DRenderTarget=nullptr;
 //
-
-/*
-precompiled header
-Inline 함수
-- 함수 코드의 수행 시간
-*/
 
 //# 사용자 정의 헤더 파일 #
 
@@ -191,8 +177,8 @@ Inline 함수
 //WS_SYSMENU : 제목 표기줄에 컨트롤 메뉴 상자 창
 #define WINSTYLE   WS_CAPTION | WS_SYSMENU
 
-//# 매크로 함수 #	(클래스에서 동적할당된 부분 해제)			//간단하게 지우고 날리고 array하겠다
-#define SAFE_DELETE(p)  {if(p){delete (p); (p)=nullptr;}}     // 이식 \ 매크로 한줄원칙
+//# 매크로 함수 #	(클래스에서 동적할당된 부분 해제)
+#define SAFE_DELETE(p)  {if(p){delete (p); (p)=nullptr;}}
 #define SAFE_DELETE_ARRAY(p) {if(p){delete[] (p); (p)=nullptr;}}
 #define SAFE_RELEASE(p) {if(p){(p)->release();(p)=nullptr;}} 
 
@@ -211,13 +197,3 @@ extern vector<Bullet> pVBullets;
 extern vector<Drops> vDrops;
 }
 
-/*
-
-* 전역변수
-extern 키워드는 다른 헤더 / cpp 에서 변수를 공유해서 쓰기 위해 사용한다.
-ㄴ 객체 공유할 때 써라
-ㄴ 기본적으로 전역변수는 키워드를 생략해도 기본적으로 extern 화 되는 경우가 많다.
-static extern 차이
-ㄴ 필요에 의해서 계속성을 바꿔줄 수 있음
-extern 은 무조건 전역
-*/
